@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/arrow_back24"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/backArrow">
+        </ImageButton>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_toLeftOf="@id/conversationMenu"
+            android:layout_toRightOf="@id/backArrow"
+            android:layout_marginTop="5dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/cardview1">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="#D4D4D4"
+                    android:id="@+id/userChatImage">
+                </ImageView>
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/cardview1"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/conversationTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textSize="18dp"
+                    android:textAlignment="center"></TextView>
+
+                <TextView
+                    android:id="@+id/participantData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:layout_toRightOf="@id/cardview1"
+                    android:text="Participant"></TextView>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/round_btn"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/conversationmenu_24"
+            android:id="@+id/conversationMenu">
+        </ImageButton>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_margin="5dp"
+        android:background="#EAEAEA" />
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:id="@+id/chatListing"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:reverseLayout="true">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D4D4D4">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/addiconchat"
+            android:layout_centerVertical="true"
+            android:id="@+id/addParticipants">
+
+        </ImageButton>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/ic_baseline_mic_none_24"
+            android:id="@+id/audioChat"
+            android:layout_centerVertical="true">
+
+        </ImageButton>
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:background="@drawable/border"
+            android:layout_centerInParent="true"
+            android:drawableRight="@drawable/ic_baseline_attach_file_24"
+            android:id="@+id/chatMsg">
+        </EditText>
+
+    </RelativeLayout>
+
+</LinearLayout>

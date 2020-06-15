@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sendchat"
+        android:textSize="15dp"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@drawable/sendchatboxborder">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:textColor="#858585"
+        android:id="@+id/sndTime">
+
+    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rcvchat"
+        android:textSize="15dp"
+        android:layout_gravity="end"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@drawable/recievechatboxborder">
+    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:textColor="#858585"
+        android:layout_gravity="end"
+        android:id="@+id/rcvTime">
+
+    </TextView>
+
+</LinearLayout>
