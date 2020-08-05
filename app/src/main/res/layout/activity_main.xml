@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    android:background="#666666"
-    android:orientation="vertical">
-
-
-
-    <FrameLayout
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/fragmentHolder"
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:layout_height="600dp">
+        android:layout_height="match_parent">
     </FrameLayout>
 
 <!--    <androidx.appcompat.widget.AppCompatButton-->
@@ -27,6 +17,3 @@
 <!--        android:text="Close">-->
 
 <!--    </androidx.appcompat.widget.AppCompatButton>-->
-
-
-</LinearLayout>

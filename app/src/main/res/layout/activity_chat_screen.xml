@@ -2,37 +2,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/white"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <!-- TODO: Update blank fragment layout -->
-    <RelativeLayout
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white">
+        <!-- TODO: Update blank fragment layout -->
+
+
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/Strip">
 
-        <ImageButton
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:background="@null"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/arrow_back24"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:id="@+id/backArrow">
-        </ImageButton>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
+        <RelativeLayout android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_toLeftOf="@id/conversationMenu"
-            android:layout_toRightOf="@id/backArrow"
-            android:layout_marginTop="5dp">
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/chatStrip"
+            android:layout_margin="5dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:background="@null"
+                android:src="@drawable/arrow_back24"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/backArrow">
+            </ImageButton>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/backArrow"
                 android:layout_centerVertical="true"
                 app:cardCornerRadius="10dp"
                 android:layout_marginLeft="10dp"
@@ -73,72 +75,75 @@
 
             </LinearLayout>
 
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/round_btn"
+                android:src="@drawable/submenu_gray_icon"
+                android:id="@+id/sortConversationBtn">
+            </ImageButton>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="550dp"
+            android:id="@+id/chatListing"
+            android:layout_above="@id/msgStrip"
+            android:layout_marginBottom="20dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:reverseLayout="true">
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/msgStrip"
+            android:padding="5dp"
+            android:background="#D4D4D4">
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/add_blue_icon"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:id="@+id/addParticipants">
+
+            </ImageButton>
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/recording_icon"
+                android:id="@+id/sndmsg"
+                android:layout_margin="5dp"
+                android:layout_centerVertical="true">
+
+            </ImageButton>
+
+            <EditText
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/innerborder"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/addParticipants"
+                android:layout_toLeftOf="@+id/sndmsg"
+                android:padding="5dp"
+                android:drawableRight="@drawable/attachmenticon"
+                android:id="@+id/chatMsg">
+            </EditText>
+
         </RelativeLayout>
 
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/round_btn"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/conversationmenu_24"
-            android:id="@+id/conversationMenu">
-        </ImageButton>
-
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_margin="5dp"
-        android:background="#EAEAEA" />
+    </LinearLayout>
 
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:id="@+id/chatListing"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:reverseLayout="true">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#D4D4D4">
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/addiconchat"
-            android:layout_centerVertical="true"
-            android:id="@+id/addParticipants">
-
-        </ImageButton>
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/ic_baseline_mic_none_24"
-            android:id="@+id/audioChat"
-            android:layout_centerVertical="true">
-
-        </ImageButton>
-
-        <EditText
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:background="@drawable/border"
-            android:layout_centerInParent="true"
-            android:drawableRight="@drawable/ic_baseline_attach_file_24"
-            android:id="@+id/chatMsg">
-        </EditText>
-
-    </RelativeLayout>
-
-</LinearLayout>

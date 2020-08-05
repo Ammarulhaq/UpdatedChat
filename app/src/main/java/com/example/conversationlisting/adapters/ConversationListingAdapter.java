@@ -16,6 +16,7 @@ import com.example.conversationlisting.modelclasses.ConversationsItem;
 import com.example.conversationlisting.utilities.DateFormatConverter;
 import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class ConversationListingAdapter extends RecyclerView.Adapter<ConversationListingAdapter.VHolder> {
@@ -41,7 +42,7 @@ public class ConversationListingAdapter extends RecyclerView.Adapter<Conversatio
     @Override
     public void onBindViewHolder(@NonNull VHolder holder, int position) {
         holder.conversationTitle.setText(items.get(position).getName());
-        holder.conversationInitDate.setText(DateFormatConverter.Companion.GetDate(items.get(position).getLatestDate()));
+        holder.conversationInitDate.setText(DateFormatConverter.Companion.GetDate(items.get(position).getLatestDate(),new SimpleDateFormat("dd-MM-YYYY")));
         Picasso.with(context).load(items.get(position).getLatestMessage().getResourceImage()).placeholder(R.mipmap.ic_launcher).error(R.mipmap.ic_launcher).into(holder.ownerImage, new com.squareup.picasso.Callback() {
             @Override
             public void onSuccess() {

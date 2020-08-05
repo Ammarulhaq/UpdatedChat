@@ -35,6 +35,10 @@ public interface WebServices {
     @POST("login")
     Call<RetrofitJSONResponse> login(@Field("email") String email, @Field("password") String password, @Field("company_id") int companyId);
 
+
+    @GET("login")
+    Call<RetrofitJSONResponse> login(@Query("email") String email);
+
     @GET("message/{message_id}")
     Call<RetrofitJSONResponse> getMessageDetails(@Path("message_id") String messageId);
 

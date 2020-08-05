@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:src="@drawable/login_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="40dp"
+        android:id="@+id/logo">
+    </ImageView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/logincard"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_below="@+id/logo"
+            android:background="@drawable/loginbackground"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="370dp"
+            android:layout_width="320dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Making Work Digital"
+                android:textSize="20dp"
+                android:layout_marginBottom="15dp"
+                android:textColor="@android:color/white">
+            </TextView>
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/username_icon"
+                    android:drawablePadding="5dp"
+                    android:background="@drawable/innerborder"
+                    android:layout_marginBottom="15dp"
+                    android:padding="5dp"
+                    android:textCursorDrawable="@null"
+                    android:textSize="15dp"
+                    android:id="@+id/userName">
+                </EditText>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/password_icon"
+                    android:background="@drawable/innerborder"
+                    android:padding="5dp"
+                    android:drawablePadding="5dp"
+                    android:id="@+id/usrPassword"
+                    android:textSize="15dp"
+                    android:textCursorDrawable="@null"
+                    android:inputType="textPassword">
+                </EditText>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Current Default"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="10dp"
+
+                    android:id="@+id/usrCompanies">
+                </TextView>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/userCompanies"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/dropdownstyle">
+                    </androidx.appcompat.widget.AppCompatSpinner>
+
+                    <ProgressBar
+                        android:id="@+id/companiesLoader"
+                        android:layout_width="30dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="2dp"
+                        android:visibility="gone">
+                    </ProgressBar>
+
+
+                </RelativeLayout>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:background="@drawable/loginbackground"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="10dp"
+                    android:textAllCaps="false"
+                    android:text="Set Default">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Auto Login"
+                    android:textColor="@android:color/white"
+                    android:buttonTint="@android:color/white">
+                </CheckBox>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:background="#88DE35"
+                    android:textColor="@android:color/white"
+                    android:text="Login"
+                    android:textAllCaps="false"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/usrLogin">
+                </androidx.appcompat.widget.AppCompatButton>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:text="Forgot My Password"
+        android:layout_below="@id/logincard"
+        android:id="@+id/forgotpwd"
+        android:textColor="#5288B2">
+    </TextView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/login_bottom_image"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true">
+    </ImageView>
+
+</RelativeLayout>

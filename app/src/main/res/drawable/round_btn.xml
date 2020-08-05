@@ -6,8 +6,8 @@
         </shape>
     </item>
     <item android:state_pressed="true">
-        <shape android:shape="oval">
-            <solid android:color="#ECEAEA"/>
+        <shape android:layout_width="10dp" android:layout_height="10dp" android:shape="oval">
+            <solid android:color="#ECEAEA" />
         </shape>
     </item>
 </selector>

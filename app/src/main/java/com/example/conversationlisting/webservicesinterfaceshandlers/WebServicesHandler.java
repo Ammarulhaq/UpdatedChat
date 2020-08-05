@@ -99,12 +99,14 @@ public class WebServicesHandler {
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("Username", email);
         parameters.put("Password", password);
-//        parameters.put("USER_TYPE", 4);
+     //parameters.put("USER_TYPE", 4);
 
         Call<RetrofitJSONResponse> call = webServices.login(parameters);
         call.enqueue(callback);
 
     }
+
+
 
     public void register(String fName, String lName, String email, String password, String confirmPassword, String RegistrationType, CustomCallback<RetrofitJSONResponse> callback) {
 
@@ -125,6 +127,10 @@ public class WebServicesHandler {
 
     public void login(String email, String password, int companyId, CustomCallback<RetrofitJSONResponse> callback) {
         Call<RetrofitJSONResponse> call = webServices.login(email, password, companyId);
+        call.enqueue(callback);
+    }
+    public void login(String email,CustomCallback<RetrofitJSONResponse> callback) {
+        Call<RetrofitJSONResponse> call = webServices.login(email);
         call.enqueue(callback);
     }
 

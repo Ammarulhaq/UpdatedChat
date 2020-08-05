@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.conversationlisting.R
 import com.example.conversationlisting.adapters.ConversationListingAdapter
+import com.example.conversationlisting.interfaces.notifyActivity
 import com.example.conversationlisting.modelclasses.ConversationsItem
 import com.example.conversationlisting.retrofitservices.CustomCallback
 import com.example.conversationlisting.retrofitservices.RetrofitJSONResponse
@@ -26,6 +27,7 @@ import java.lang.Exception
 class ConversationFragment() : Fragment() , ConversationListingAdapter.OnConversationSelect{
 
     var ListConvo:List<ConversationsItem>?=null
+    var token:String?=null
     var isScrolling=false
     var currentItems=0;var totalItems=0;var scrollOutItems=0
     var madapter: ConversationListingAdapter?=null
@@ -45,7 +47,15 @@ class ConversationFragment() : Fragment() , ConversationListingAdapter.OnConvers
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragmentone,container,false)
+         val view=inflater.inflate(R.layout.fragmentone,container,false)
+
+
+       if(arguments!=null && arguments!!.getString("token")!=null)
+       {
+           token=arguments!!.getString("token")
+
+       }
+        return view
     }
 
     override fun onStart() {
@@ -86,9 +96,10 @@ class ConversationFragment() : Fragment() , ConversationListingAdapter.OnConvers
         super.onDestroy()
     }
 
+
     fun GetAllConversations()
     {
-        WebServicesHandler.instance.getAllConversations("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb21wYW55X2lkIjoiMTg4IiwiZW1haWwiOiJoYW1tYWRAd3VycWkuY29tIiwicmVzb3VyY2VfaWQiOjEzMiwiZXhwIjoxNTkyODE1OTYyfQ.ablSga3SyaV7YESEMwAfi0U23nnGHaWTDtRfgEwUDrE",object : CustomCallback<RetrofitJSONResponse?>() {
+        WebServicesHandler.instance.getAllConversations(token,object : CustomCallback<RetrofitJSONResponse?>() {
             override fun onSuccess(response: RetrofitJSONResponse) {
 
                 ListConvo = Gson().fromJson(
@@ -155,21 +166,19 @@ class ConversationFragment() : Fragment() , ConversationListingAdapter.OnConvers
 
     private fun fetchMoreData() {
        loadingConversation.visibility= View.VISIBLE
-        Handler().postDelayed({
-            for(i in 1..5)
-            {
-                conversationListing.adapter?.notifyDataSetChanged()
-               loadingConversation.visibility= View.GONE
-            }
-        },3000)
+      activity!!.runOnUiThread {
+          for(i in 1..5)
+          {
+              conversationListing.adapter?.notifyDataSetChanged()
+              loadingConversation.visibility= View.GONE
+          }
+      }
+
+
     }
 
     override fun onSelectConversation(position: Int,conversationModel:ConversationsItem) {
-            notify?.onFragmentClicked(position,conversationModel)
+            notify?.onConversationFragment(position,conversationModel)
     }
 
-  public interface notifyActivity
-  {
-      fun onFragmentClicked(position: Int,conversationModel:ConversationsItem);
-  }
 }

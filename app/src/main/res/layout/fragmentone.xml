@@ -5,20 +5,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:background="@drawable/border"
-    android:layout_margin="10dp"
+    android:background="@drawable/outerborder"
     android:orientation="vertical">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textSize="20dp"
+            android:textSize="18dp"
+            android:padding="5dp"
+            android:textStyle="bold"
             android:textColor="#666666"
             android:text="Conversation">
         </TextView>
@@ -27,36 +28,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_margin="5dp"
             android:orientation="horizontal">
 
             <ImageButton
-                android:layout_width="30dp"
-                android:layout_height="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:background="@drawable/round_btn"
                 android:layout_marginRight="10dp"
-                android:src="@drawable/sortbyicon"
+                android:src="@drawable/sort_gray_icon"
                 android:id="@+id/sortConversationBtn">
             </ImageButton>
 
             <ImageButton
-                android:layout_width="30dp"
-                android:layout_height="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="@drawable/round_btn"
-                android:src="@drawable/addiconconversation"
+                android:src="@drawable/add_gray_icon"
                 android:id="@+id/addConversationBtn">
             </ImageButton>
 
         </LinearLayout>
-
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_margin="5dp"
-        android:background="#EAEAEA" />
+        android:layout_height="1dp"
+        android:background="#121010" />
 
     <EditText
         android:id="@+id/searchConversation"
@@ -75,9 +73,10 @@
         android:id="@+id/conversationListing"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@null">
 
+        android:background="@null">
     </androidx.recyclerview.widget.RecyclerView>
+
 
     <ProgressBar
         android:layout_width="wrap_content"
@@ -87,6 +86,5 @@
         android:id="@+id/loadingConversation"
         android:visibility="gone">
     </ProgressBar>
-
 
 </LinearLayout>

@@ -1,45 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tilelayout">
 
-    <TextView
+    <RelativeLayout
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/piclayout"
+        android:layout_margin="10dp">
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/cardview1">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="#D4D4D4"
+                android:visibility="gone"
+
+                android:id="@+id/usrImg">
+            </ImageView>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/sendchat"
-        android:textSize="15dp"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        android:background="@drawable/sendchatboxborder">
-    </TextView>
+        android:layout_toRightOf="@id/piclayout"
+        android:layout_margin="5dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        android:textColor="#858585"
-        android:id="@+id/sndTime">
+        <TextView
+            android:id="@+id/usrname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#82829D"
+            android:textStyle="bold"
+            android:visibility="gone"></TextView>
 
-    </TextView>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/rcvchat"
-        android:textSize="15dp"
-        android:layout_gravity="end"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        android:background="@drawable/recievechatboxborder">
-    </TextView>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        android:textColor="#858585"
-        android:layout_gravity="end"
-        android:id="@+id/rcvTime">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sendchat"
+            android:layout_below="@id/usrname"
+            android:textSize="15dp"
+            android:padding="8dp"
+            android:background="@drawable/sendchatboxborder">
+        </TextView>
 
-    </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColor="#858585"
+            android:visibility="gone"
+            android:layout_below="@id/sendchat"
+            android:layout_marginRight="10dp"
+            android:id="@+id/sndTime">
 
-</LinearLayout>
+        </TextView>
+
+
+
+    </RelativeLayout>
+
+
+<!--    <SeekBar-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:id="@+id/mediaplayer"-->
+<!--        android:visibility="gone"-->
+<!--        android:background="#9CA7B8">-->
+<!--    </SeekBar>-->
+
+
+
+
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/rcvchat"-->
+<!--        android:textSize="15dp"-->
+<!--        android:layout_gravity="end"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:padding="10dp"-->
+<!--        android:background="@drawable/recievechatboxborder">-->
+<!--    </TextView>-->
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@null"-->
+<!--        android:textColor="#858585"-->
+<!--        android:layout_gravity="end"-->
+<!--        android:id="@+id/rcvTime">-->
+
+<!--    </TextView>-->
+
+</RelativeLayout>
